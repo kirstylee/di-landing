@@ -1,0 +1,186 @@
+/** Base Global Elements **/
+html {
+  touch-action: manipulation;
+}
+
+html, body {
+  font-family: @base-font-family;
+  font-size: 14px;
+  line-height: 1.4em;
+  font-weight: 200;
+  color: @greyDark;
+  -webkit-font-smoothing: antialiased;
+  &.noScroll {
+    overflow: hidden !important;
+    height: 100% !important;
+  }
+  @media only screen and (min-width: 600px) {
+    font-size: 18px;
+  }
+}
+
+
+hr {
+  margin: 0;
+  border: none;
+  border-bottom: solid 1px @grey;
+}
+
+iframe {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+
+/** Clears and Floats **/
+
+.clear {
+  clear: both;
+}
+
+.clearLeft {
+  clear: left;
+}
+
+.clearRight {
+  clear: right;
+}
+
+.floatLeft {
+  float: left;
+}
+
+.floatRight {
+  float: right;
+}
+
+
+.show-xxs {
+  display: block;
+  @media only screen and (min-width: 400px) {
+    display: none;
+  }
+
+}
+
+.xxs-spacing {
+  line-height:2;
+  @media only screen and (min-width: 400px) {
+    line-height: 1;
+  }
+}
+
+/** Links **/
+a {
+  text-decoration: none;
+  color: @green;
+  outline: none;
+  .transition(0.2s);
+  &:hover {
+    color: @greenDark;
+    text-decoration: underline;
+  }
+  &:focus {
+    outline: none;
+    text-decoration: none;
+  }
+  &.linkSecondary {
+    color: @grey;
+    &:hover {
+      color: @grey;
+      text-decoration: underline;
+    }
+    &:focus {
+      color: @grey;
+      text-decoration: underline;
+    }
+  }
+}
+
+/** Lists **/
+ul {
+  margin: 0 0 15px 15px;
+  padding: 0;
+
+  li {
+    margin: 0 0 10px 0;
+    padding: 0;
+
+    /* For Custom Bullets */
+    /*
+    list-style: none;
+    position: relative;
+    &:before {
+      content: "•";
+      position: absolute;
+      left: -15px;
+      color: @blue;
+    }
+    */
+  }
+}
+
+/** Menu Lists **/
+
+ul {
+  &.menu {
+    margin: 0;
+    padding: 0;
+    li {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+  }
+  &.menuVertical {
+    li {
+      margin: 0 0 15px 0;
+      &:last {
+        margin-bottom: 0;
+      }
+    }
+  }
+  &.menuHorizontal {
+    li {
+      float: left;
+      margin: 0 15px 0 0;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+/** Page Wrappers **/
+.pageWrapper {
+  width: 100%;
+  float: left;
+  .transition(0.25s, ease-in, 0s);
+}
+
+.with-vertical-line {
+  position: relative;
+  &:before {
+    content: '';
+    background: @navy;
+    width: 7px;
+    position: absolute;
+    top: 0;
+    bottom: 35px;
+    display: block;
+    left: 16px;
+  }
+}
+
+.claims {
+  a.btn {
+    margin-bottom: 30px;
+    white-space: initial;
+    line-height: 1;
+    padding: 10px 20px;
+    height: auto;
+  }
+}
+

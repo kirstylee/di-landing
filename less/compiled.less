@@ -1,0 +1,35 @@
+// ------------------------------------------------------
+// Helpers CSS
+// ------------------------------------------------------
+@import "helpers/mixins.less";
+@import "helpers/fonts.less";
+@import "helpers/variables.less";
+
+// ------------------------------------------------------
+// Vendor CSS
+// ------------------------------------------------------
+// Any third party CSS libraries are imported first so we can override in the cascade
+
+@import "vendor/bootstrap.less";
+@import "vendor/ionicons.less";
+
+// ------------------------------------------------------
+// Modules CSS
+// ------------------------------------------------------
+// Any elements that can be reused on the website should be created as a separate module
+
+@import "modules/base.less";
+@import "modules/headings.less";
+@import "modules/buttons.less";
+@import "modules/forms.less";
+@import "modules/header.less";
+@import "modules/footer.less";
+@import "modules/modals.less";
+@import "modules/elements.less";
+
+// ------------------------------------------------------
+// Major sections CSS
+// ------------------------------------------------------
+// Styles relevant to each major section should live in their own file
+
+@import "sections/home.less";

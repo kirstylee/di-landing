@@ -1,0 +1,323 @@
+/** Home **/
+section {
+  &.bannerPrimary {
+    //background: @navy;
+    background:
+        linear-gradient(
+            rgba(0, 0, 0, 0.4),
+            rgba(0, 0, 0, 0.4)
+        ), url(../images/home_kraken.jpg);
+    .lead {
+      a {
+        color: @white;
+        text-decoration: underline;
+      }
+    }
+    .bannerWrapper {
+      &:before {
+        display: none;
+      }
+    }
+  }
+}
+
+/** Secondary page **/
+.landlords-insurance,
+.claims {
+  section {
+    &.bannerPrimary {
+      //background: @navy;
+      background: linear-gradient(
+              rgba(0, 0, 0, 0.4),
+              rgba(0, 0, 0, 0.4)
+      ), url(../images/landlords_kraken.jpg);
+
+    }
+  }
+}
+
+.home-insurance {
+  section {
+    &.bannerPrimary {
+      //background: @navy;
+      background: linear-gradient(
+              rgba(0, 0, 0, 0.4),
+              rgba(0, 0, 0, 0.4)
+      ), url(../images/home-contents_kraken.jpg);
+
+    }
+  }
+}
+
+
+
+@media only screen and (max-width: 767px) {
+  section {
+    &.bannerPrimary {
+      height: auto;
+      padding: 65px 0 15px 0;
+      .bannerWrapper {
+        position: relative;
+        top: auto;
+        left: auto;
+        right: auto;
+        bottom: auto;
+      }
+    }
+  }
+}
+@media only screen and (min-width: 768px) {
+  section {
+    &.fullWidthBanner {
+      &.bannerPrimary {
+        padding-top: 80px;
+        padding-bottom: 23%;
+        .container {
+          padding-top: 30px;
+        }
+      }
+    }
+  }
+}
+@media only screen and (min-width: 992px) {
+  section {
+    &.fullWidthBanner {
+      &.bannerPrimary {
+        padding-top: 100px;
+        margin-bottom: 60px;
+        .container {
+          padding-top: 40px;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1600px) {
+  section {
+    &.fullWidthBanner {
+      &.bannerPrimary {
+        height: 530px;
+        padding-bottom: 0;
+      }
+    }
+  }
+}
+
+
+.infoActionBox {
+  .blockWrapper {
+    background: @navy;
+    border-radius: 3px;
+    a,h3,p {
+      color: #fff;
+    }
+    p, a {
+      font-size: 17px;
+    }
+    p {
+      margin-bottom: 35px;
+    }
+    h3 {
+      margin-bottom: 5px;
+    }
+    a:hover {
+      text-decoration: none;
+      h3 {
+        text-decoration: underline;
+      }
+    }
+    box-shadow: none;
+    .transition(0.2s);
+  }
+  .textWrapper {
+    padding: 24px;
+  }
+  &:hover {
+    .blockWrapper {
+      box-shadow: 0 3px 6px 0 rgba(30, 41, 61, 0.15), 0 5px 10px 0 rgba(30, 41, 61, 0.15);
+    }
+  }
+  .linkSecondary-01,
+  .linkSecondary-02 {
+    &:before {
+      content: '';
+      background-position: center;
+      background-size: cover;
+      width: 32px;
+      height: 32px;
+      display: block;
+      position: absolute;
+    }
+  }
+  .linkSecondary-01 {
+    &:before {
+      background-image: url(../images/house-white.svg);
+    }
+  }
+  .linkSecondary-02 {
+    &:before {
+      background-image: url(../images/agent.svg);
+    }
+  }
+}
+
+.quickInfoBox {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 16px;
+  line-height: 1.4;
+
+  @media only screen and (max-width: 650px) {
+    width: 100%;
+  }
+
+  img {
+    height: 90px;
+    width: auto;
+    margin-bottom: 25px;
+  }
+  .ion-ios-arrow-forward:before {
+    padding-left: 15px;
+  }
+  .ion-ios-arrow-forward {
+    position: absolute;
+    right: -20px;
+    bottom: -4px;
+    @media only screen and (max-width: 330px) {
+      right: -10px;
+    }
+  }
+  h4 a {
+    position: relative;
+  }
+  p {
+    margin-bottom: 0;
+  }
+}
+
+.infoActionBox {
+  .textOuter a.pull-left {
+    position: relative;
+  }
+  .ion-chevron-right {
+    position: absolute;
+    top: 5px;
+    right: -25px;
+    font-size: 14px;
+    &:before {
+      padding-left: 15px;
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .quickInfoBox {
+    text-align: left;
+  }
+
+}
+
+.list-group {
+  margin-left: -10px;
+  margin-top: 10px;
+  overflow: hidden;
+  .list-group-item {
+    border: none;
+    padding: 13px 10px;
+    color: @green;
+    .rounded(4px);
+    &:hover {
+      color: @greenDark;
+      background: @greyExtraLight;
+    }
+    &:after {
+      content: "\f125";
+      font-family: @icon-font-family;
+      //float: right;
+      font-size: 13px;
+      padding-left: 15px;
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .list-group {
+    &.home-list-group {
+      a {
+        width: 50%;
+        float: left;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .list-group {
+    &.home-list-group {
+      a {
+        width: 33.333%;
+      }
+    }
+  }
+}
+
+
+.get-quote {
+  position: relative;
+  margin-right: 30px;
+  &:hover {
+    text-decoration: underline !important;
+  }
+}
+
+
+.secondary-page-template {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  h2 {
+    margin-bottom: 25px;
+  }
+  h4 {
+    margin: 0 !important;
+  }
+  p {
+    margin: 0px 0px 30px 0px;
+  }
+  .refer-to {
+    margin-bottom: 30px;
+    display: block;
+    text-decoration: underline;
+  }
+  .pageWrapper {
+    padding-top: 100px !important;
+    flex: 1;
+    @media only screen and (min-width: 768px) {
+      padding-top: 150px !important;
+    }
+  }
+  .navDesktop .bg-navy {
+    background: @navy;
+  }
+  .navSlideout {
+    height: 60px;
+    .logo {
+      width: 99px;
+      height: 30px;
+      margin: 15px 0;
+    }
+    ul {
+      &.menuMain {
+        @media only screen and (min-width: 768px) {
+          margin: 8px 0;
+        }
+      }
+    }
+  }
+  .mobileMenu {
+    top: 4px;
+  }
+
+}

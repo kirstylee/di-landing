@@ -1,0 +1,392 @@
+/* WEBSITE HEADER & NAVIGATION STYLES */
+
+
+/** Fixed Header Padding Compensation **/
+
+body {
+  &.fixedHeader {
+    .pageWrapper {
+      padding: 0;
+      //padding: 65px 0 0 0;
+    }
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+    }
+  }
+  &.menuOpen {
+    overflow: hidden;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  body {
+    &.fixedHeader {
+      .pageWrapper {
+        padding: 0;
+        //padding: 130px 0 0 0;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  body {
+    &.fixedHeader {
+      .pageWrapper {
+        padding: 0
+        //padding: 130px 0 0 0;
+      }
+    }
+  }
+}
+
+/** START Main Navigation Styles **/
+
+nav {
+  width: 100%;
+  height: 50px;
+  margin: 0 0 15px 0;
+  //background: @navy;
+  font-family: @heading-font-family;
+  position: relative;
+  overflow: hidden;
+  z-index: 10;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  .col {
+    position: static;
+  }
+
+  .logo {
+    width: 98px;
+    height: 30px;
+    margin: 10px 0;
+    display: block;
+    float: left;
+    background: url(../img/sitedesign-logo.svg) no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    line-height: 500px;
+    .transition(0.2s);
+  }
+
+  ul {
+    &.menuMain {
+      width: 100%;
+      height: 0;
+      padding: 0 15px;
+      overflow: auto;
+      -webkit-overflow-scrolling: touch;
+      .box-sizing(border-box);
+      .transition(0.5s, ease-in, 0s);
+      li {
+        width: 100%;
+        height: 45px;
+        display: table;
+        margin: 0;
+        border-bottom: solid 1px @greyMedium;
+        a {
+          width: 100%;
+          height: 100%;
+          color: @white;
+          display: table-cell;
+          vertical-align: middle;
+          font-size: 16px;
+
+          @media only screen and (max-width: 767px) {
+            line-height: 1.9;
+            padding-top: 5px;
+            &:hover {
+              text-decoration: none;
+            }
+          }
+        }
+        .ion {
+          width: 25px;
+          font-size: 24px;
+          float: left;
+          text-align: center;
+        }
+        &.active,
+        &.current-menu-item,
+        &.current_page_item {
+          a {
+            //border-bottom: 2px solid #fff;
+          }
+        }
+      }
+    }
+  }
+}
+
+/** END Main Navigation Styles **/
+
+/** START Mobile Navigation Drop-down Style **/
+
+nav {
+  &.navDropdown {
+    .transition(0.35s, ease-in, 0s);
+    ul {
+      &.menuMain {
+        height: 100%;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        opacity: 0;
+      }
+    }
+  }
+}
+
+.menuOpen {
+  nav {
+    &.navDropdown,
+    &.navSlideout {
+      height: 100%;
+      ul {
+        &.menuMain {
+          opacity: 1;
+          background: @navy;
+        }
+      }
+    }
+  }
+}
+
+/** END Mobile Menu Drop-down Style **/
+
+/** START Mobile Navigation Slide Out Style **/
+
+nav {
+  &.navSlideout {
+    overflow: visible;
+    .transition(0.25s, ease-in, 0s);
+    ul {
+      &.menuMain {
+        width: 250px;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 100%;
+      }
+    }
+    .navBlocker {
+      position: fixed;
+      height: 0;
+      top: 0;
+      left: 0;
+      right: 0;
+      opacity: 0;
+      background: #071939;
+      .transition(0.35s, ease-out, 0.1s);
+      .transitionProperty(opacity);
+    }
+  }
+}
+
+.menuOpen {
+  nav {
+    &.navSlideout {
+      .transform(translate3d(-250px, 0, 0));
+    }
+    .navBlocker {
+      height: 100vh;
+      z-index: 10;
+      opacity: 0.8;
+    }
+  }
+  .pageWrapper {
+    &.open {
+      .transform(translate3d(-250px, 0, 0));
+    }
+  }
+}
+
+/** END Mobile Navigation Slide Out Style **/
+
+/** START Mobile Hamburger Menu Icon **/
+
+.mobileMenu {
+  width: 48px;
+  height: 50px;
+  position: absolute;
+  z-index: 10;
+  right: 0;
+  top: 0;
+  cursor: pointer;
+  .icon {
+    width: 18px;
+    height: 14px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -7px;
+    margin-left: -9px;
+    .rotation(0deg);
+    .transition(0.2s);
+    span {
+      width: 100%;
+      height: 1px;
+      display: block;
+      position: absolute;
+      left: 0;
+      opacity: 1;
+      background: @white;
+      .rounded(0);
+      .rotation(0deg);
+      .transition(0.2s);
+      &:nth-child(1) {
+        top: 0;
+      }
+      &:nth-child(2),
+      &:nth-child(3) {
+        top: 6px;
+      }
+      &:nth-child(4) {
+        top: 12px;
+      }
+    }
+  }
+}
+
+.menuOpen {
+  .mobileMenu {
+    .icon {
+      span {
+        &:nth-child(1) {
+          width: 0%;
+          top: 9px;
+          left: 50%;
+        }
+        &:nth-child(2) {
+          .rotation(45deg);
+        }
+        &:nth-child(3) {
+          .rotation(-45deg);
+        }
+        &:nth-child(4) {
+          width: 0%;
+          top: 9px;
+          left: 50%;
+        }
+      }
+    }
+  }
+}
+
+/** END Mobile Hamburger Menu Icon **/
+
+nav {
+  &.sticky .bg-navy {
+    background: @navy;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  nav {
+    &.navDesktop {
+      height: 80px;
+      .transition(0.2s);
+      .logo {
+        width: 130px;
+        height: 40px;
+        margin: 20px 0;
+      }
+      ul {
+        &.menuMain {
+          width: auto;
+          height: 44px;
+          position: relative;
+          top: auto;
+          left: auto;
+          padding: 0;
+          margin: 18px 0;
+          opacity: 1;
+          float: right;
+          .transition(0.2s);
+          .transitionProperty(margin);
+          li {
+            width: auto;
+            height: auto;
+            float: left;
+            margin: 12px 15px 0 0;
+            border: none;
+            &:last-child {
+              margin-right: 0;
+            }
+            a {
+              &:hover {
+                border-bottom: 2px solid #fff;
+                text-decoration: none;
+              }
+            }
+            &.active,
+            &.current-menu-item,
+            &.current_page_item {
+              a {
+
+              }
+            }
+            &:last-child {
+              a {
+                &:hover {
+                  border-bottom: 0;
+                }
+              }
+            }
+          }
+        }
+      }
+      .navBlocker {
+        display: none;
+      }
+
+      &.sticky {
+        height: 60px;
+        background: @navy;
+        .logo {
+          width: 99px;
+          height: 30px;
+          margin: 15px 0;
+        }
+        ul {
+          &.menuMain {
+            margin: 8px 0;
+          }
+        }
+      }
+    }
+  }
+  .home-insurance nav ul.menu li:nth-of-type(1),
+  .landlords-insurance nav ul.menu li:nth-of-type(2),
+  .claims nav ul.menu li:nth-of-type(3) {
+    border-bottom: 2px solid #fff;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  nav {
+    &.navDesktop {
+      height: 100px;
+      .transition(0.2s);
+      .logo {
+        width: 129px;
+        height: 40px;
+        margin: 25px 0;
+      }
+      ul {
+        &.menuMain {
+          margin: 28px 0;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+
+}
+
+
