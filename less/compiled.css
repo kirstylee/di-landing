@@ -9894,23 +9894,19 @@ iframe {
   border: none;
 }
 .dont-break-out {
-
   /* These are technically the same, but use both */
   overflow-wrap: break-word;
   word-wrap: break-word;
-
   -ms-word-break: break-all;
   /* This is the dangerous one in WebKit, as it breaks things wherever */
   word-break: break-all;
   /* Instead use this non-standard one: */
   word-break: break-word;
-
   /* Adds a hyphen where the word breaks, if supported (No Blink) */
   -ms-hyphens: auto;
   -moz-hyphens: auto;
   -webkit-hyphens: auto;
   hyphens: auto;
-
 }
 /** Clears and Floats **/
 .clear {
@@ -9974,11 +9970,13 @@ a.linkSecondary:focus {
   text-decoration: underline;
 }
 /** Lists **/
-ul {
+ul,
+ol {
   margin: 0 0 15px 15px;
   padding: 0;
 }
-ul li {
+ul li,
+ol li {
   margin: 0 0 10px 0;
   padding: 0;
   /* For Custom Bullets */
@@ -11083,6 +11081,9 @@ footer a {
 footer a:hover,
 footer a:focus {
   color: #FFF;
+}
+footer p a {
+  text-decoration: underline;
 }
 footer ul.menuFooter {
   max-height: 0;
